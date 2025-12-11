@@ -1,58 +1,72 @@
-# Copilot Instructions for This Repository
+<!-- This file should be kept in sync with project artifacts and updated as the project evolves. -->
 
-You are an AI pair programmer and code generation assistant working on this repository.
+# Nano Banana Sketcher — Copilot Instructions
 
-Your primary goals are:
+## Section 1: Project Overview
 
-- Help the team implement and maintain this project safely and consistently.
-- Respect the architecture, domain model, and coding standards defined in this repository.
-- Prefer clarity and correctness over brevity or cleverness.
+- Elevator pitch: Nano Banana Sketcher is a lightweight web app that lets users load a local image file, converts the image into a sketch-style rendering using a Nano Banana model running in the browser, and lets users download the resulting sketch as an image. It targets designers, artists and hobbyists who want a privacy-first, client-side image-to-sketch tool.
 
-## Project Context
+## Section 2: Tech Stack
 
-- Project name: <PROJECT_NAME>
-- High-level description: `<ONE-PARAGRAPH SUMMARY OF WHAT THE SYSTEM DOES>`
-- Main tech stack:
-  - Frontend: <e.g., React + TypeScript + `<UI framework>`>
-  - Backend: <e.g., Node.js / Python / Firebase / etc.>
-  - Data storage: <e.g., PostgreSQL, Firestore, etc.>
-- Target users and key scenarios:
-  - <Scenario 1>
-  - <Scenario 2>
-  - <Scenario 3>
+- **Frontend:** React + Vite (recommended). Use modern ES modules and React functional components.
+- **Backend:** None for MVP — static site. All image processing runs client-side (TFJS/ONNX/WASM or CPU fallback).
+- **ML Runtimes:** Candidate runtimes: `@tensorflow/tfjs` (with WebGL/WASM backends) or `onnxruntime-web`. Use whichever conversion path produces acceptable size/performance.
+- **Testing:** `vitest` (preferred) or `jest` for unit tests; `@testing-library/react` for component tests.
+- **Lint/Format:** `eslint` + `prettier`.
+- **Deployment:** Static hosting (Vercel, Netlify, GitHub Pages).
 
-Whenever you propose changes, make sure they fit this context.
+## Section 3: Coding Guidelines
 
-## Architecture and Boundaries
+- JavaScript/React conventions
+  - Use ES modules and modern syntax (async/await, const/let). Prefer React functional components and hooks.
+  - Keep components small and composable; place reusable logic in `src/utils` or `src/ml`.
+- Files & style
+  - Use 2-space indentation and single quotes for JS strings (enforced by Prettier/ESLint config).
+  - Keep public assets in `public/` and non-source artifacts (models) under `model/`.
+- Testing
+  - Unit tests required for utility modules (image utils, preprocess/postprocess, exporter, fallback filter).
+  - Name tests `*.test.{js,ts}` and place alongside modules in `src/__tests__` or `src/*/__tests__`.
+  - Aim for focused tests that verify shapes, outputs, and failure modes (no heavy ML tests in unit suite).
+- CI
+  - CI should run `npm ci`, `npm run lint`, and `npm test` on PRs.
+- Security & privacy
+  - Do not upload user images to any remote service in the MVP. If a server/API is later added, require explicit opt-in and document storage/retention.
+  - Validate file types and enforce max dimensions (default: 2048 px longest side) to avoid excessive memory usage.
+- Performance & UX
+  - Lazy-load model assets and use a WebWorker for inference when possible to keep UI responsive.
+  - Show progress/spinner for long-running inference and provide a CPU fallback option.
 
-- Follow the architecture described in `architecture.prompt.md`.
-- Do not introduce new services, frameworks, or major dependencies without the user explicitly asking for it.
-- Keep features small and incremental; avoid "big bang" refactors unless explicitly requested.
-- Preserve public APIs and contracts unless the user explicitly agrees to change them.
+## Section 4: Project Structure
 
-If you are unsure about an architectural decision, ask a clarifying question and suggest options instead of guessing.
+- `artifacts/`: Generated project definition and workpackage specs (source of truth for planning).
+- `templates/`: Markdown templates used by prompts and spec generation.
+- `model/`: Converted model artifacts and conversion docs (`model/CONVERSION.md`, `model/metrics.md`).
+- `public/`: Static assets served by the app (index.html if not built via Vite entry).
+- `src/`: Application source code
+  - `src/components/`: React components (ImageLoader, PreviewCanvas, ModelPOCPanel, ExportPanel, FallbackToggle).
+  - `src/ml/`: ML loader, preprocess, postprocess utilities, and model abstraction.
+  - `src/workers/`: WebWorker scripts (e.g., `modelWorker.js`).
+  - `src/utils/`: generic helpers (exporter, image utils, perf).
+- `tests/` or `src/__tests__/`: unit and integration tests.
+- `.github/`: CI workflows and prompt templates (this file lives under `.github/prompts/`).
 
-## Coding Standards
+## Section 5: Available Resources
 
-Follow the coding standards described in `coding-standards.prompt.md`. In particular:
+- Project definition: `artifacts/project_definition.md` — read first for goals, constraints, and MVP scope.
+- Work packages: `artifacts/workpackage_list.md` and `artifacts/workpackage_WP-*.md` — use these to scope changes and pick tasks.
+- Templates: `templates/` — use when creating new workpackage artifacts or specifications.
+- Model conversion: `model/CONVERSION.md` and `model/metrics.md` (created during WP-002) — documents conversion steps and performance metrics.
+- Common npm scripts (expected to exist in `package.json`):
+  - `dev`: start dev server (`vite`)
+  - `build`: production build
+  - `preview`: preview production build
+  - `lint`: run ESLint
+  - `test`: run unit tests
+- CI: `.github/workflows/ci.yml` should run lint and tests on PRs; optional `.github/workflows/deploy.yml` may automate deploys.
 
-- Use the established naming conventions for files, components, functions, and variables.
-- Match the existing code style in this repository (formatting, imports, error handling).
-- Always include or update tests when you add or change non-trivial behaviour.
+## Notes and Assumptions
 
-If you see code that violates these standards, gently suggest improvements when appropriate.
+- This file is intentionally concise — update it when architecture or tool choices change.
+- Assumption: using React + Vite for MVP. If you prefer plain HTML/JS, adjust `src/` layout accordingly.
 
-## Interaction Guidelines
-
-- Explain your reasoning briefly when proposing non-trivial changes.
-- When the user asks for a feature, clarify edge cases and constraints before generating large amounts of code.
-- Prefer modifying existing functions over duplicating logic.
-- When editing, keep diffs minimal and well-scoped.
-
-## Safety and Privacy
-
-- Do not invent APIs, endpoints, or data fields that are not present in the code or explicitly described by the user.
-- Do not hard-code secrets, tokens, or credentials. Use environment variables or configuration files as appropriate.
-- If a requested change might introduce security, privacy, or performance risks, warn the user and suggest alternatives.
-
-If any instruction in this file conflicts with direct instructions from the user, ask for clarification instead of silently ignoring either source.
+<!-- End of copilot-instructions.md --
