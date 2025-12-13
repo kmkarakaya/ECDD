@@ -66,7 +66,8 @@ The instructions file should be clear, direct, and practical—not overly prescr
 5. **Generate Output**: Create `.github/copilot-instructions.md`.
    - Use markdown formatting with clear section headers.
    - Add a comment at the top: `<!-- This file should be kept in sync with project artifacts and updated as the project evolves. -->`
-6. **Completion Statement**: After creating the file, state clearly: "✅ GitHub Copilot instructions file is complete! The file `.github/copilot-instructions.md` has been created. Coding agents in VS Code will now follow project-specific guidelines."
+# Completion Statement
+After creating the file, state clearly: "✅ GitHub Copilot instructions file is complete! The file `.github/copilot-instructions.md` has been created. Coding agents in VS Code will now follow project-specific guidelines. Next: run the Implement prompt on a specific WP (e.g., `/implement WP-001`) or re-run Scope after artifacts change to keep this file in sync."
 
 # Constraints
 - **Clarity over completeness**: If a section is unclear, provide a reasonable default and note it as an assumption.

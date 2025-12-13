@@ -4,11 +4,13 @@ description: "Implements a specific Work Package by creating a detailed todo pla
 version: 1.0.0
 role: "Senior Full-Stack Developer"
 input_files:
-  - "artifacts/project_definition.md"
-  - "artifacts/workpackage_list.md"
-  - "artifacts/workpackage_[ID].md"
-  - "artifacts/log.md"
-output_file: "artifacts/todos_WP-[ID].md"
+   - "artifacts/project_definition.md"
+   - "artifacts/workpackage_list.md"
+   - "artifacts/workpackage_[ID].md"
+   - "artifacts/log.md"
+output_files:
+   - "artifacts/todos_WP-[ID].md"
+   - "artifacts/log.md"
 ---
 # Context
 
@@ -17,6 +19,7 @@ Your goal is to implement Work Package `${input:workPackageId}` based on the det
 You must ensure the implementation aligns with the Project Definition and integrates with existing work logged in `artifacts/log.md`.
 
 # Resources
+
 - Project Definition: #file:artifacts/project_definition.md
 - Roadmap: #file:artifacts/workpackage_list.md
 - Log: #file:artifacts/log.md (if exists)
@@ -69,7 +72,12 @@ You must ensure the implementation aligns with the Project Definition and integr
    * State clearly: "✅ Work Package `${input:workPackageId}` implementation is complete! I have executed the plan in `artifacts/todos_WP-${input:workPackageId}.md` and updated the project log."
 
 # Constraints
+
 - **Atomic Changes**: Implement one logical piece at a time.
 - **Strict Spec Adherence**: Follow the technical specs in `artifacts/workpackage_${input:workPackageId}.md` precisely.
 - **Maintain History**: Do not overwrite `artifacts/log.md`; always append.
 - **Self-Correction**: If a verification step fails, fix the code before moving to the next todo item.
+
+# Completion Statement
+
+After completing the implementation for `${input:workPackageId}`, state clearly: "✅ Work Package `${input:workPackageId}` implementation is complete! I have executed the plan in `artifacts/todos_WP-${input:workPackageId}.md` and updated the project log. Next: run Implement for another WP (e.g., `/implement WP-002`), re-run tests, or request a review."

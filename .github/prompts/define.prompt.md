@@ -31,7 +31,8 @@ Your goal is to create a comprehensive Project Definition file that will serve a
     *   **Wait for the user's answer** before asking the next question.
     *   Record all answers in a "Clarifications & Assumptions" subsection in the final output.
 5.  **Generate Output**: Create `artifacts/project_definition.md` strictly following the template.
-6.  **Completion Statement**: After creating the file, state clearly: "✅ Project Definition is complete! The file `artifacts/project_definition.md` has been created. You can now run the Plan prompt to generate the Work Package roadmap."
+# Completion Statement
+After creating the file, state clearly: "✅ Project Definition is complete! The file `artifacts/project_definition.md` has been created. Next: run the Plan prompt to generate the Work Package roadmap."
 
 # Constraints
 -   **Strict Template Adherence**: You must use the exact markdown structure from the template.
