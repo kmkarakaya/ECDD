@@ -6,10 +6,10 @@ role: "Senior Full-Stack Developer"
 input_files:
    - "artifacts/project_definition.md"
    - "artifacts/workpackage_list.md"
-   - "artifacts/workpackage_[ID].md"
+   - "artifacts/workpackage_${input:workPackageId}.md"
    - "artifacts/log.md"
 output_files:
-   - "artifacts/todos_WP-[ID].md"
+   - "artifacts/todos_WP-${input:workPackageId}.md"
    - "artifacts/log.md"
 ---
 # Context
@@ -68,9 +68,6 @@ You must ensure the implementation aligns with the Project Definition and integr
      - **API/Interface Changes**: <New endpoints or signature changes>
      - **Notes**: <Technical decisions, assumptions made, or items deferred to future WPs>
      ```
-5. **Completion Statement**:
-   * State clearly: "✅ Work Package `${input:workPackageId}` implementation is complete! I have executed the plan in `artifacts/todos_WP-${input:workPackageId}.md` and updated the project log."
-
 # Constraints
 
 - **Atomic Changes**: Implement one logical piece at a time.
@@ -80,4 +77,5 @@ You must ensure the implementation aligns with the Project Definition and integr
 
 # Completion Statement
 
-After completing the implementation for `${input:workPackageId}`, state clearly: "✅ Work Package `${input:workPackageId}` implementation is complete! I have executed the plan in `artifacts/todos_WP-${input:workPackageId}.md` and updated the project log. Next: run Implement for another WP (e.g., `/implement WP-002`), re-run tests, or request a review."
+After completing the implementation for `${input:workPackageId}`, state clearly: "OK: Work Package `${input:workPackageId}` implementation is complete! I have executed the plan in `artifacts/todos_WP-${input:workPackageId}.md` and updated the project log. Next: run Implement for another WP (e.g., `/implement WP-002`), re-run tests, or request a review."
+

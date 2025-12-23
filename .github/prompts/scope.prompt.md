@@ -13,7 +13,7 @@ output_file: ".github/copilot-instructions.md"
 You are a DevOps Engineer and Technical Writer responsible for maintaining the GitHub Copilot instructions file.
 This file ensures that coding agents (GitHub Copilot, Copilot Edits, Copilot Workspace) consistently follow project-specific guidelines, architecture decisions, and coding standards throughout development in VS Code.
 
-The instructions file should be clear, direct, and practical—not overly prescriptive. Your goal is to "tilt the scales" so Copilot generates relevant, consistent suggestions aligned with the project's context.
+The instructions file should be clear, direct, and practical - not overly prescriptive. Your goal is to "tilt the scales" so Copilot generates relevant, consistent suggestions aligned with the project's context.
 
 # Resources
 - Project Definition: #file:artifacts/project_definition.md
@@ -66,8 +66,6 @@ The instructions file should be clear, direct, and practical—not overly prescr
 5. **Generate Output**: Create `.github/copilot-instructions.md`.
    - Use markdown formatting with clear section headers.
    - Add a comment at the top: `<!-- This file should be kept in sync with project artifacts and updated as the project evolves. -->`
-# Completion Statement
-After creating the file, state clearly: "✅ GitHub Copilot instructions file is complete! The file `.github/copilot-instructions.md` has been created. Coding agents in VS Code will now follow project-specific guidelines. Next: run the Implement prompt on a specific WP (e.g., `/implement WP-001`) or re-run Scope after artifacts change to keep this file in sync."
 
 # Constraints
 - **Clarity over completeness**: If a section is unclear, provide a reasonable default and note it as an assumption.
@@ -94,3 +92,7 @@ After creating the file, state clearly: "✅ GitHub Copilot instructions file is
 ### Testing
 - [Framework]: [Usage notes]
 ```
+
+# Completion Statement
+After creating the file, state clearly: "OK: GitHub Copilot instructions file is complete! The file `.github/copilot-instructions.md` has been created. Coding agents in VS Code will now follow project-specific guidelines. Next: run the Implement prompt on a specific WP (e.g., `/implement WP-001`) or re-run Scope after artifacts change to keep this file in sync."
+

@@ -42,4 +42,5 @@ Your goal now is to break this project down into manageable Work Packages (WPs) 
 -   **Output Format**: The output must be a valid Markdown file.
 
 # Completion Statement
-After creating the roadmap file, state clearly: "✅ Work Package Roadmap is complete! The file `artifacts/workpackage_list.md` has been created with [N] work packages. You can now run the Elaborate prompt on specific WP IDs (e.g., WP-001) to create detailed specifications."
+After creating the roadmap file, state clearly: "OK: Work Package Roadmap is complete! The file `artifacts/workpackage_list.md` has been created with [N] work packages. You can now run the Elaborate prompt on specific WP IDs (e.g., WP-001) to create detailed specifications."
+
