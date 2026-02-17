@@ -1,10 +1,8 @@
-# Title
-
-Explicit Context-Driven Development: From Vibe Coding to Verifiable Workflows in AI-Augmented Software Engineering
+# Explicit Context-Driven Development: From Vibe Coding to Verifiable Workflows in AI-Augmented Software Engineering
 
 # Abstract
 
-AI-assisted programming tools can accelerate delivery, but informal "vibe coding" with Large Language Models (LLMs) often yields architectural drift, context loss, and weak traceability as projects scale. We address this gap with Explicit Context-Driven Development (ECDD), a reusable methodology that treats prompts, templates, and project context as first-class, version-controlled artifacts rather than transient chat history. ECDD is organized around three pillars: (i) Prompt-Driven AI Governance, (ii) Auditable Task & State Management, and (iii) a Five-Phase Workflow (Define, Plan, Elaborate, Scope, Implement). Operationally, executable prompt contracts guide structured developer-AI interaction, fill editable Markdown templates, and generate persistent artifacts such as `project_definition.md`, `workpackage_list.md`, `workpackage_WP-XXX.md`, and `log.md` (in an artifacts folder), plus tool-scoped instructions such as `copilot-instructions.md`. Because these artifacts live in the repository, they can be inspected, diffed, and reviewed like code, decoupling project state from ephemeral chat windows. After each phase, developers review and can revise the artifacts; subsequent prompts consume the revised state, enabling deterministic propagation of decisions and standards. We hypothesize that this artifact-centric workflow can strengthen auditability and reduce context drift across planning, specification, and implementation, offering a practical alternative to ad hoc AI-assisted development for both practitioners and researchers.
+AI-assisted programming tools can accelerate delivery, but informal "vibe coding" with large language models (LLMs) often yields architectural drift, context loss, and weak traceability as projects scale. We address this gap with Explicit Context-Driven Development (ECDD), a reusable methodology that treats prompts, templates, and project context as first-class, version-controlled artifacts rather than transient chat history. ECDD is organized around three pillars: (i) Prompt-Driven AI Governance, (ii) Auditable Task & State Management, and (iii) a Five-Phase Workflow (Define, Plan, Elaborate, Scope, Implement). Operationally, executable prompt contracts guide structured developer-AI interaction, fill editable Markdown templates, and generate persistent artifacts such as `project_definition.md`, `workpackage_list.md`, `workpackage_WP-XXX.md`, and `log.md` (in an artifacts folder), plus tool-scoped instructions such as `copilot-instructions.md`. Because these artifacts live in the repository, they can be inspected, diffed, and reviewed like code, decoupling project state from ephemeral chat windows. After each phase, developers review and can revise the artifacts; subsequent prompts consume the revised state, enabling deterministic propagation of decisions and standards. We hypothesize that this artifact-centric workflow can strengthen auditability and reduce context drift across planning, specification, and implementation, offering a practical alternative to ad hoc AI-assisted development for both practitioners and researchers.
 
 # Keywords
 
@@ -24,7 +22,7 @@ We propose **Explicit Context-Driven Development (ECDD)**, a methodology for AI-
 
 This "copilot, not autopilot" stance preserves human oversight while retaining AI speed advantages. ECDD is designed to improve alignment across planning, specification, and implementation, and to reduce context loss across sessions.
 
-Figure 1 summarizes ECDD as a five-phase pipeline (Define, Plan, Elaborate, Scope, Implement) supported by the three pillars and their associated intermediate artifacts, making explicit how governance prompts, work packages, and append-only logs replace ephemeral chat context during development.
+Fig. 1 summarizes ECDD as a five-phase pipeline (Define, Plan, Elaborate, Scope, Implement) supported by the three pillars and their associated intermediate artifacts, making explicit how governance prompts, work packages, and append-only logs replace ephemeral chat context during development.
 
 Section II introduces the concrete repository layout and the corresponding prompt, template, and artifact set (Fig. 2).
 
@@ -33,7 +31,7 @@ This paper makes three contributions. First, we define ECDD as a concrete method
 The remainder of the paper is organized as follows. Section II introduces ECDD and details the prompt-, template-, and artifact-based workflow. Section III provides a brief running example that illustrates the artifact chain end-to-end. Section IV discusses practical lessons, limitations, threats to validity, and an evaluation plan. Section V concludes and outlines future research directions.
 
 ![ECDD workflow](workflow.png)
-*Figure 1. ECDD workflow: five phases (Define, Plan, Elaborate, Scope, Implement) and the three supporting pillars with key artifacts.*
+*Fig. 1. ECDD workflow: five phases (Define, Plan, Elaborate, Scope, Implement) and the three supporting pillars with key artifacts.*
 
 # II. EXPLICIT CONTEXT-DRIVEN DEVELOPMENT (ECDD)
 
@@ -42,7 +40,7 @@ Explicit Context-Driven Development (ECDD) is a methodology for AI-assisted soft
 This repository layout is intentional (Fig. 2): `.github/prompts/` is the editable governance and workflow entry point (teams adjust prompting and interview behavior here), `templates/` is the editable contract layer (teams encode project- and company-specific standards in the artifact structure), and `artifacts/` is the persistent project state (generated by agents but explicitly reviewed and edited by developers as the source of truth). When `templates/` or `artifacts/` evolve, teams re-run the Scope prompt to regenerate `copilot-instructions.md` in the `.github/` folder, ensuring downstream coding agents consistently receive the current standards and decisions. This structure operationalizes "contracts over conversation" and supports the traceability chain described below.
 
 ![ECDD repository structure](folders.png)
-*Figure 2. Reference ECDD repository structure (prompts, templates, artifacts) and edit points.*
+*Fig. 2. Reference ECDD repository structure (prompts, templates, artifacts) and edit points.*
 
 In the remainder of this section, we describe ECDD at increasing levels of concreteness: Section II.A summarizes the design principles, Section II.B specifies the executable prompt contracts, Section II.C defines the artifact model and traceability chain, and Section II.D walks through the reference workflow end-to-end.
 
@@ -56,17 +54,17 @@ ECDD is guided by the following design principles:
 4. **Incremental, resumable execution**: implementation is decomposed into checklists; progress is tracked explicitly rather than inferred from chat history.
 5. **IDE-agnostic by default, IDE-integrated when available**: the same artifacts can be used in any AI-IDE, while `copilot-instructions.md` in the `.github/` folder provides an integration point for GitHub Copilot in VS Code [1].
 
-Table 1 contrasts these principles with ad-hoc "vibe coding", highlighting how ECDD systematically addresses the risks of architectural drift and lost context.
+Table 1 contrasts these principles with ad hoc "vibe coding", highlighting how ECDD systematically addresses the risks of architectural drift and lost context.
 
-| Feature                  | Ad-Hoc "Vibe Coding"                   | ECDD (Proposed)                                     |
+| Feature                  | Ad hoc "Vibe Coding"                   | ECDD (Proposed)                                     |
 | :----------------------- | :------------------------------------- | :-------------------------------------------------- |
 | **Context Source** | Ephemeral chat history (lost on reset) | Version-controlled repository artifacts             |
-| **Governance**     | None (user dependent)                  | Executable Prompt Contracts & Templates             |
-| **Consistency**    | High variability (styles drift)        | Schema-enforced (Strict template adherence)         |
-| **Traceability**   | Implicit / Non-existent                | Explicit chain (Definition -> Spec -> Log) |
+| **Governance**     | None (user-dependent)                  | Executable Prompt Contracts & Templates             |
+| **Consistency**    | High variability (styles drift)        | Schema-enforced (strict template adherence)         |
+| **Traceability**   | Implicit / nonexistent                 | Explicit chain (Definition -> Spec -> Log) |
 | **Collab. Model**  | Single-player (hard to share context)  | Multi-player (Git-reviewable state)                 |
 
-*Table 1. Comparison of ad-hoc "vibe coding" versus Explicit Context-Driven Development (ECDD), showing how persistent artifacts and schemas replace ephemeral chat context.*
+*Table 1. Comparison of ad hoc "vibe coding" versus Explicit Context-Driven Development (ECDD), showing how persistent artifacts and schemas replace ephemeral chat context.*
 
 ## B. Executable Prompts as Workflow Contracts
 
@@ -104,11 +102,11 @@ Crucially, ECDD assumes that prompt execution is followed by an explicit develop
 
 **Implement:** The Implement prompt (`implement.prompt.md` in the prompts folder) implements a single work package under developer oversight with explicit progress tracking and an auditable change record. It uses the current project definition and roadmap, the selected detailed work-package specification (`workpackage_WP-XXX.md` in the artifacts folder), and (if present) `log.md` to create or resume a granular checklist (`todos_WP-XXX.md` in the artifacts folder), verify steps atomically, and append a detailed entry to `log.md` without overwriting history.
 
-### B.1 Prompt Contract Schema (Repo Grounded)
+### B.1 Prompt Contract Schema (Repo-Grounded)
 
 In ECDD, a prompt file is treated as a small, executable "workflow contract." In this repository, each of the five prompts begins with YAML front matter that declares a stable identifier and an explicit I/O contract. The most common fields are `name`, `description`, `version`, `role`, `input_files`, and an output declaration. Table 3 summarizes the intended semantics.
 
-In practice, prompt ecosystems and IDE integrations vary, and so do implementation details. Our reference prompts demonstrate two small inconsistencies that are important to call out explicitly: some prompts declare a single `output_file`, while others declare an `output_files` list; and work-package-specific prompts use parameter placeholders for a WP identifier (e.g., a `workPackageId`), but the exact placeholder notation can differ across tools. In the remainder of this paper we use `WP-XXX` as a tool-agnostic placeholder for a work package identifier and recommend normalizing outputs as a list for consistency.
+In practice, prompt ecosystems and IDE integrations vary, and so do implementation details. Our reference prompts demonstrate two small inconsistencies that are important to call out explicitly: some prompts declare a single `output_file`, while others declare an `output_files` list; and work-package-specific prompts use parameter placeholders for a WP identifier (e.g., a `workPackageId`), but the exact placeholder notation can differ across tools. In the remainder of this paper, we use `WP-XXX` as a tool-agnostic placeholder for a work package identifier and recommend normalizing outputs as a list for consistency.
 
 | Field            | Meaning                  | Example values (from this repo)              | Constraints / notes                                   |
 | ---------------- | ------------------------ | -------------------------------------------- | ----------------------------------------------------- |
@@ -174,10 +172,10 @@ Templates are intentionally editable. Teams can tailor the structure of intermed
 
 Together, these artifacts form a traceability chain from intent to code: `project_definition.md` -> `workpackage_list.md` -> `workpackage_WP-XXX.md` -> `todos_WP-XXX.md` -> implementation + `log.md` (with the chain stored and reviewed under the artifacts folder).
 
-Figure 3 visualizes this traceability chain and highlights the deliberate human-in-the-loop revision checkpoints between phases.
+Fig. 3 visualizes this traceability chain and highlights the deliberate human-in-the-loop revision checkpoints between phases.
 
 ![ECDD traceability and revision loop](traceability_loop.png)
-*Figure 3. Traceability chain and human-in-the-loop revision checkpoints: each phase produces a reviewable artifact, developers can revise it in version control, and subsequent prompts consume the revised state rather than relying on ephemeral chat memory.*
+*Fig. 3. Traceability chain and human-in-the-loop revision checkpoints: each phase produces a reviewable artifact, developers can revise it in version control, and subsequent prompts consume the revised state rather than relying on ephemeral chat memory.*
 
 ## D. Workflow Instantiation in Practice
 
@@ -332,7 +330,7 @@ As LLMs and tools evolve, ECDD should evolve as well. Larger context windows may
 
 # VI. REFERENCES
 
-[1] GitHub Docs, "Adding repository custom instructions for GitHub Copilot," 2026. Accessed: 2026-02-15.
+[1] GitHub Docs, "Adding repository custom instructions for GitHub Copilot," 2026. Accessed: 2026-02-15. Available: https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot
 
 [2] A. Ziegler, E. Kalliamvakou, X. A. Li, A. Rice, D. Rifkin, S. Simister, G. Sittampalam, and E. Aftandilian, "Measuring GitHub Copilot's Impact on Productivity," Communications of the ACM, vol. 67, no. 3, pp. 54-63, 2024. doi: 10.1145/3633453. URL: https://doi.org/10.1145/3633453.
 
@@ -360,4 +358,4 @@ As LLMs and tools evolve, ECDD should evolve as well. Larger context windows may
 
 [14] Y. Qu, S. Huang, Y. Li, T. Bai, X. Chen, X. Wang, L. Li, and Y. Yao, "BadCodePrompt: backdoor attacks against prompt engineering of large language models for code generation," Automated Software Engineering, vol. 32, no. 1, Art. no. 17, 2025. doi: 10.1007/s10515-024-00485-2.
 
-[15] M. Binkhonain and R. Alfayez, "Are prompts all you need? Evaluating prompt-based Large Language Models (LLM)s for software requirements classification," Requirements Engineering, vol. 30, no. 4, pp. 423-443, 2025. doi: 10.1007/s00766-025-00451-8.
+[15] M. Binkhonain and R. Alfayez, "Are prompts all you need? Evaluating prompt-based Large Language Models (LLMs) for software requirements classification," Requirements Engineering, vol. 30, no. 4, pp. 423-443, 2025. doi: 10.1007/s00766-025-00451-8.
