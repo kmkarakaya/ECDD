@@ -1,6 +1,6 @@
-﻿# Explicit Context-Driven Development (ECDD) Prompts
+# Explicit Context-Driven Development (ECDD) Prompts
 
-This repository contains canonical prompt templates and simple text-based workflows for **Explicit Context-Driven Development (ECDD)** – a methodology for AI-augmented software development that treats prompts and contextual information as first-class, version-controlled artifacts.
+This repository contains canonical prompt templates and simple text-based workflows for **Explicit Context-Driven Development (ECDD)** � a methodology for AI-augmented software development that treats prompts and contextual information as first-class, version-controlled artifacts.
 
 The prompts and templates in this repo are **AI-IDE agnostic** and can be used with:
 
@@ -36,29 +36,29 @@ ECDD is built on three pillars:
 
 ```text
 .
-├─ .github/
-│   ├─ prompts/                     # Executable prompts for AI agents
-│   │   ├─ define.prompt.md         # 1. Define project (creates project_definition.md)
-│   │   ├─ plan.prompt.md           # 2. Plan roadmap (creates workpackage_list.md)
-│   │   ├─ elaborate.prompt.md      # 3. Elaborate WP (creates workpackage_WP-XXX.md)
-│   │   ├─ scope.prompt.md          # 4. Scope AI context (creates copilot-instructions.md)
-│   │   └─ implement.prompt.md      # 5. Implement WP (creates todos & code)
-│   └─ copilot-instructions.md      # Auto-loaded by GitHub Copilot in VS Code
-│
-├─ templates/                       # Markdown templates used by prompts
-│   ├─ template_project_definition.md
-│   ├─ template_simple_workpackage.md     # For roadmap (Phase 2)
-│   └─ template_complete_workpackage.md   # For detailed specs (Phase 3)
-│
-├─ artifacts/                       # Generated project documents (Git-tracked)
-│   ├─ project_definition.md        # Project overview, tech stack, scope
-│   ├─ workpackage_list.md          # High-level roadmap of all WPs
-│   ├─ workpackage_WP-001.md        # Detailed spec for WP-001
-│   ├─ workpackage_WP-002.md        # Detailed spec for WP-002
-│   ├─ todos_WP-001.md              # Granular implementation checklist
-│   └─ log.md                       # Append-only implementation log
-│
-└─ README.md
+|-- .github/
+|   |-- prompts/                     # Executable prompts for AI agents
+|   |   |-- define.prompt.md         # 1. Define project (creates project_definition.md)
+|   |   |-- plan.prompt.md           # 2. Plan roadmap (creates workpackage_list.md)
+|   |   |-- elaborate.prompt.md      # 3. Elaborate WP (creates workpackage_WP-XXX.md)
+|   |   |-- scope.prompt.md          # 4. Scope AI context (creates copilot-instructions.md)
+|   |   `-- implement.prompt.md      # 5. Implement WP (creates todos & code)
+|   `-- copilot-instructions.md      # Auto-loaded by GitHub Copilot in VS Code
+|
+|-- templates/                       # Markdown templates used by prompts
+|   |-- template_project_definition.md
+|   |-- template_simple_workpackage.md     # For roadmap (Phase 2)
+|   `-- template_complete_workpackage.md   # For detailed specs (Phase 3)
+|
+|-- artifacts/                       # Generated project documents (Git-tracked)
+|   |-- project_definition.md        # Project overview, tech stack, scope
+|   |-- workpackage_list.md          # High-level roadmap of all WPs
+|   |-- workpackage_WP-001.md        # Detailed spec for WP-001
+|   |-- workpackage_WP-002.md        # Detailed spec for WP-002
+|   |-- todos_WP-001.md              # Granular implementation checklist
+|   `-- log.md                       # Append-only implementation log
+|
+`-- README.md
 ```
 
 ### Key Folders
@@ -115,16 +115,16 @@ Follow the workflow below using your AI assistant. After each phase, **review an
 **Copy-pastable example (VS Code):**
 
 ```
-/define a web app named "AI Concepts Dictionary" — the user enters an AI concept or keyword and the app returns a well-structured definition, concise examples, related resources, and short code snippets where relevant. Use the Gemini API key from the `GEMINI_API_KEY` system environment variable and call Gemini 2.5 Flash Lite as the LLM. Keep the UI simple and modern. 
+/define a web app named "AI Concepts Dictionary" � the user enters an AI concept or keyword and the app returns a well-structured definition, concise examples, related resources, and short code snippets where relevant. Use the Gemini API key from the `GEMINI_API_KEY` system environment variable and call Gemini 2.5 Flash Lite as the LLM. Keep the UI simple and modern. 
 ```
 
 **What to include in the project definition (the prompt will ask for these):**
 
-- **Name & purpose:** short name and 1–2 sentence mission
+- **Name & purpose:** short name and 1�2 sentence mission
 - **Core features:** search input, definition view, examples, resource links, small settings page
 - **Tech stack:** frontend (React + Vite), styling (Tailwind), backend (Node + Express) as an API proxy
 - **Environment variables:** `GEMINI_API_KEY` (for Gemini API), `PORT` for local server
-- **LLM & config:** Gemini 2.5 Flash Lite, temperature 0.2–0.6, short max tokens for concise responses
+- **LLM & config:** Gemini 2.5 Flash Lite, temperature 0.2�0.6, short max tokens for concise responses
 - **Acceptance criteria:** returns structured JSON with `definition`, `examples`, `resources`; UI shows items clearly; runs locally with `npm run dev`
 
 **Other IDEs:** Open `.github/prompts/define.prompt.md` in your AI chat and paste the example or fill the requested fields when prompted.
@@ -266,5 +266,6 @@ This repository is not an autonomous agent system; it is a **structured collabor
 
 ## 7. License
 
-MIT License – see `LICENSE` file for details.
+MIT License � see `LICENSE` file for details.
+
 

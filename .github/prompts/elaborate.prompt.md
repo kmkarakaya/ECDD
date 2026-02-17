@@ -50,4 +50,5 @@ You need to take *one* specific Work Package from that list and expand it into a
 
 # Completion Statement
 
-After creating the specification file, state clearly: "✅ Work Package `${input:workPackageId}` specification is complete! The file `artifacts/workpackage_${input:workPackageId}.md` has been created and is ready for implementation. You can now run the Elaborate prompt on other work packages. If you elaborate all the workpackages, run the Scope prompt to generate the copilot-instructions."
+After creating the specification file, state clearly: "OK: Work Package `${input:workPackageId}` specification is complete! The file `artifacts/workpackage_${input:workPackageId}.md` has been created and is ready for implementation. You can now run the Elaborate prompt on other work packages. If you elaborate all the workpackages, run the Scope prompt to generate the copilot-instructions."
+
