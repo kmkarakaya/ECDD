@@ -12,7 +12,7 @@ Explicit Context-Driven Development (ECDD), AI-Assisted Software Engineering, Pr
 
 # I. INTRODUCTION
 
-AI coding tools can accelerate software delivery, but they also introduce coordination and quality risks. Modern large language models (LLMs) can generate substantial code from short prompts, which makes informal "vibe coding" attractive for fast iteration. Empirical studies of AI-assisted programming report productivity benefits in some settings [2], but also surface quality and security concerns when assistance is used without explicit constraints and review practices [3], [4], [12]. As projects grow, this informal style often leads to architectural drift, inconsistent conventions, and weak traceability between intent and implementation.
+AI coding tools can accelerate software delivery, but they also introduce coordination and quality risks. Modern large language models (LLMs) can generate substantial code from short prompts, which makes informal "vibe coding" attractive for fast iteration. Empirical studies of AI-assisted programming report perceived productivity impacts and benefits in some settings [2]. Other studies surface code quality concerns [3] and security risks in AI-generated code, including empirical evidence of security weaknesses in Copilot-generated code used in GitHub projects [4] and large-scale comparative analyses across LLMs [12]. As projects grow, this informal style often leads to architectural drift, inconsistent conventions, and weak traceability between intent and implementation.
 
 A practical alternative is to externalize context from transient chat into repository artifacts that can be reviewed, diffed, and maintained with code. In this view, prompts are not ad hoc instructions but durable technical assets that encode goals, constraints, architecture, and coding rules for both developers and AI tools.
 
@@ -334,11 +334,11 @@ As LLMs and tools evolve, ECDD should evolve as well. Larger context windows may
 
 [1] GitHub Docs, "Adding repository custom instructions for GitHub Copilot," 2026. Accessed: 2026-02-15.
 
-[2] S. Peng, E. Kalliamvakou, P. Cihon, and M. Demirer, "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot," arXiv:2302.06590, 2023.
+[2] A. Ziegler, E. Kalliamvakou, X. A. Li, A. Rice, D. Rifkin, S. Simister, G. Sittampalam, and E. Aftandilian, "Measuring GitHub Copilot's Impact on Productivity," Communications of the ACM, vol. 67, no. 3, pp. 54-63, 2024. doi: 10.1145/3633453. URL: https://doi.org/10.1145/3633453.
 
 [3] M. Di Penta and S. Panichella, "GitHub Copilot AI pair programmer: Asset or Liability?," Journal of Systems and Software, vol. 203, p. 111734, 2023.
 
-[4] Y. Fu, P. Liang, A. Tahir, Z. Li, M. Shahin, J. Yu, and J. Chen, "Security Weaknesses of Copilot-Generated Code in GitHub Projects: An Empirical Study," arXiv:2310.02059, 2023.
+[4] Y. Fu, P. Liang, A. Tahir, Z. Li, M. Shahin, J. Yu, and J. Chen, "Security Weaknesses of Copilot-Generated Code in GitHub Projects: An Empirical Study," ACM Transactions on Software Engineering and Methodology, vol. 34, no. 8, Art. no. 218, pp. 1-34, 2025. doi: 10.1145/3716848. URL: https://doi.org/10.1145/3716848.
 
 [5] S. Schulhoff et al., "The Prompt Report: A Systematic Survey of Prompting Techniques," arXiv:2406.06608, 2024.
 
