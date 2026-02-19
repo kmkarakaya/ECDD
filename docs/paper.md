@@ -20,7 +20,7 @@ We propose **Explicit Context-Driven Development (ECDD)**, a methodology for AI-
 2. **Auditable Task & State Management**: work decomposition and execution history are captured in reviewable artifacts (roadmaps, work package specifications, stepwise checklists, and append-only logs) to preserve traceability from intent to implementation.
 3. **Five-Phase Workflow**: each phase reduces uncertainty by transforming free-form intent into template-shaped, reviewable artifacts before coding begins.
 
-This "copilot, not autopilot" stance preserves human oversight while retaining AI speed advantages. ECDD is designed to improve alignment across planning, specification, and implementation, and to reduce context loss across sessions.
+This "copilot, not autopilot" stance preserves human oversight while retaining AI speed advantages. ECDD is intended to improve alignment across planning, specification, and implementation, and to help reduce context loss across sessions.
 
 Fig. 1 summarizes ECDD as a five-phase pipeline (Define, Plan, Elaborate, Scope, Implement) supported by the three pillars and their associated intermediate artifacts, making explicit how governance prompts, work packages, and append-only logs replace ephemeral chat context during development.
 
@@ -28,7 +28,7 @@ Section II introduces the concrete repository layout and the corresponding promp
 
 This paper makes three contributions. First, we define ECDD as a concrete methodology grounded in explicit, version-controlled context artifacts. Second, we present reusable workflows and canonical prompt/template assets that operationalize the methodology in practice. Third, we show how the approach decouples project state from any single AI interface, enabling IDE-agnostic adoption (e.g., GitHub Copilot, Cursor, Windsurf).
 
-The remainder of the paper is organized as follows. Section II introduces ECDD and details the prompt-, template-, and artifact-based workflow. Section III provides a brief running example that illustrates the artifact chain end-to-end. Section IV discusses practical lessons, limitations, threats to validity, and an evaluation plan. Section V concludes and outlines future research directions.
+The remainder of the paper is organized as follows. Section II introduces ECDD and details the prompt-, template-, and artifact-based workflow. Section III provides a brief running example that illustrates the artifact chain end-to-end. Section IV discusses practical lessons, limitations, and threats to validity. Section V concludes and outlines future research directions, including an evaluation agenda.
 
 ![ECDD workflow](workflow.png)
 *Fig. 1. ECDD workflow: five phases (Define, Plan, Elaborate, Scope, Implement) and the three supporting pillars with key artifacts.*
@@ -56,13 +56,13 @@ ECDD is guided by the following design principles:
 
 Table 1 contrasts these principles with ad hoc "vibe coding", highlighting how ECDD systematically addresses the risks of architectural drift and lost context.
 
-| Feature                  | Ad hoc "Vibe Coding"                   | ECDD (Proposed)                                     |
-| :----------------------- | :------------------------------------- | :-------------------------------------------------- |
-| **Context Source** | Ephemeral chat history (lost on reset) | Version-controlled repository artifacts             |
-| **Governance**     | None (user-dependent)                  | Executable Prompt Contracts & Templates             |
-| **Consistency**    | High variability (styles drift)        | Schema-enforced (strict template adherence)         |
-| **Traceability**   | Implicit / nonexistent                 | Explicit chain (Definition -> Spec -> Log) |
-| **Collab. Model**  | Single-player (hard to share context)  | Multi-player (Git-reviewable state)                 |
+| Feature                  | Ad hoc "Vibe Coding"                   | ECDD (Proposed)                             |
+| :----------------------- | :------------------------------------- | :------------------------------------------ |
+| **Context Source** | Ephemeral chat history (lost on reset) | Version-controlled repository artifacts     |
+| **Governance**     | None (user-dependent)                  | Executable Prompt Contracts & Templates     |
+| **Consistency**    | High variability (styles drift)        | Schema-enforced (strict template adherence) |
+| **Traceability**   | Implicit / nonexistent                 | Explicit chain (Definition -> Spec -> Log)  |
+| **Collab. Model**  | Single-player (hard to share context)  | Multi-player (Git-reviewable state)         |
 
 *Table 1. Comparison of ad hoc "vibe coding" versus Explicit Context-Driven Development (ECDD), showing how persistent artifacts and schemas replace ephemeral chat context.*
 
@@ -102,7 +102,7 @@ Crucially, ECDD assumes that prompt execution is followed by an explicit develop
 
 **Implement:** The Implement prompt (`implement.prompt.md` in the prompts folder) implements a single work package under developer oversight with explicit progress tracking and an auditable change record. It uses the current project definition and roadmap, the selected detailed work-package specification (`workpackage_WP-XXX.md` in the artifacts folder), and (if present) `log.md` to create or resume a granular checklist (`todos_WP-XXX.md` in the artifacts folder), verify steps atomically, and append a detailed entry to `log.md` without overwriting history.
 
-### B.1 Prompt Contract Schema (Repo-Grounded)
+### B.1 Prompt Contract Schema 
 
 In ECDD, a prompt file is treated as a small, executable "workflow contract." In this repository, each of the five prompts begins with YAML front matter that declares a stable identifier and an explicit I/O contract. The most common fields are `name`, `description`, `version`, `role`, `input_files`, and an output declaration. Table 3 summarizes the intended semantics.
 
@@ -132,13 +132,13 @@ output_files: [artifacts/workpackage_list.md]
 ---
 ```
 
-### B.2 Execution Semantics (Clarification Protocol + Completion Statements)
+### B.2 Execution Semantics 
 
 Beyond I/O, ECDD prompts encode execution semantics that are designed to make interactions predictable and auditable. The first is a clarification protocol: when a prompt detects missing information that would materially affect downstream work, it asks one question at a time, provides a small set of options with trade-offs and a recommended default, and waits for the developer's response. The developer can then directly revise artifacts before the next prompt consumes them, turning clarification into a version-controlled correction rather than an ephemeral chat detour.
 
 The second is an explicit completion statement. Each prompt ends by stating which artifact(s) were created or updated and which prompt should be executed next. This acts as a lightweight handoff mechanism that reduces context loss, especially when developers switch tools or resume work later.
 
-### B.3 Resource Binding Mechanism (`#file:` References)
+### B.3 Resource Binding Mechanism 
 
 The reference prompts also include a pragmatic binding mechanism for inputs: `#file:` references that point to the relevant templates and artifacts (e.g., `#file:templates/template_project_definition.md`). In IDEs that support file-aware prompts, these directives can be resolved automatically; in simpler chat interfaces, developers can approximate the same behavior by attaching the referenced files or pasting their contents. The key point is not the specific directive syntax, but the contract principle: prompts declare what must be read and what must be produced, so intermediate artifacts remain consistent across tools and sessions.
 
@@ -168,7 +168,7 @@ Template evolution is itself a workflow. Teams can edit templates to encode proj
 
 *Table 4. Examples of how template-shaped fields act as lightweight quality controls, reducing variability and omission risk compared to free-form vibe coding artifacts.*
 
-Templates are intentionally editable. Teams can tailor the structure of intermediate artifacts to their domain and governance needs (e.g., adding security checklists, test strategy fields, performance budgets, or links to ADRs) and encode organization-specific definitions of "done." Because agents are instructed to adhere strictly to the templates folder, updating a template changes the contract for subsequent artifacts in a controlled, reviewable way. Compared to free-form artifact generation in vibe coding, template-driven artifacts reduce variability and help prevent omission of critical fields such as acceptance criteria and verification steps, which is intended to improve maintainability and overall software quality. Related work also shows that prompt engineering and fine-tuning can materially affect LLM-based automation performance in software engineering tasks such as automated code review [13].
+Templates are intentionally editable. Teams can tailor the structure of intermediate artifacts to their domain and governance needs (e.g., adding security checklists, test strategy fields, performance budgets, or links to ADRs) and encode organization-specific definitions of "done." Because agents are instructed to adhere strictly to the templates folder, updating a template changes the contract for subsequent artifacts in a controlled, reviewable way. Compared to free-form artifact generation in vibe coding, template-driven artifacts can reduce variability and help prevent omission of critical fields such as acceptance criteria and verification steps, which is intended to improve maintainability and overall software quality. Related work also shows that prompt engineering and fine-tuning can materially affect LLM-based automation performance in software engineering tasks such as automated code review [13].
 
 Together, these artifacts form a traceability chain from intent to code: `project_definition.md` -> `workpackage_list.md` -> `workpackage_WP-XXX.md` -> `todos_WP-XXX.md` -> implementation + `log.md` (with the chain stored and reviewed under the artifacts folder).
 
@@ -280,7 +280,9 @@ Section II described ECDD as a workflow package built from executable prompts, t
 
 ## A. Practical Lessons and Limitations
 
-Compared to informal vibe coding, ECDD's primary advantage is not that models "know more," but that they are repeatedly grounded in the same, reviewable context. Governance prompts and scoped AI instructions help reduce behavioral drift; template-shaped artifacts reduce variability in intermediate documents; and append-only logs make it easier to reconstruct what changed and why. This is intended to strengthen alignment between intent and implementation, especially when multiple developers or agents contribute to the same codebase over time.
+This paper does not report controlled benchmarking results for ECDD. The discussion below reflects informal observations from toy projects and focuses on methodological rationale rather than measured improvements.
+
+Compared to informal vibe coding, ECDD's primary advantage is not that models "know more," but that they are repeatedly grounded in the same, reviewable context. Governance prompts and scoped AI instructions help reduce behavioral drift; template-shaped artifacts reduce variability in intermediate documents; and append-only logs make it easier to reconstruct what changed and why. This aims to strengthen alignment between intent and implementation, especially when multiple developers or agents contribute to the same codebase over time.
 
 ECDD also introduces costs. Maintaining prompts, templates, and artifacts takes time, and the up-front effort can feel disproportionate for small or short-lived prototypes. The overhead is typically easier to justify when the project has a longer lifetime, when multiple contributors are expected, or when the domain carries non-trivial risk (privacy, safety, or regulatory constraints). For exploratory work, a lighter subset of the method (e.g., a project definition plus scoped AI instructions) may be sufficient.
 
@@ -312,19 +314,13 @@ Internal validity is threatened by confounders such as developer experience, dom
 
 External validity is threatened by domain and organizational variance. Some domains may resist template shaping (e.g., highly exploratory research prototypes), while regulated domains may require additional governance layers beyond what our templates include. In addition, storing rich context in a repository can raise confidentiality and compliance concerns; organizations may need access control, redaction, or internal hosting policies to adopt artifact-centric workflows safely.
 
-## D. Evaluation Plan (No Results)
-
-To evaluate ECDD empirically without overstating results, we propose a method-only evaluation plan that compares ECDD-style workflows against baseline ad hoc AI-assisted development. A study could assign comparable feature-implementation tasks to developers (or small teams) under two conditions: (i) free-form prompting with an LLM assistant, and (ii) ECDD with the five-phase prompt workflow and template-shaped artifacts.
-
-Outcome measures should include both process and product dimensions. Process measures could include traceability completeness (presence and internal consistency of `project_definition.md`, `workpackage_list.md`, `workpackage_WP-XXX.md`, `todos_WP-XXX.md`, and `log.md`), frequency of context resets (repeated clarification of previously decided constraints), rework cycles (changes to acceptance criteria after implementation), and review effort. Product measures could include test coverage for the implemented feature, defect reports during verification, and reproducibility of continuing work after a tool or session switch. Importantly, such studies should report threats explicitly and avoid attributing improvements solely to model capability rather than to workflow structure.
-
 # V. CONCLUSION AND FUTURE WORK
 
-We introduced Explicit Context-Driven Development (ECDD), a methodology for AI-assisted software development that treats prompts, templates, and project context as first-class, version-controlled artifacts rather than ephemeral chat state. ECDD is structured around three pillars (Prompt-Driven AI Governance, Auditable Task & State Management, and a Five-Phase Workflow: Define, Plan, Elaborate, Scope, Implement) and operationalized as a concrete repository workflow (Fig. 1, Fig. 2; Tables 1-3). The central claim is methodological: making intermediate planning and specification artifacts explicit, template-shaped, and reviewable creates predictable handoffs between developer intent and AI assistance while preserving human-in-the-loop control.
+We introduced Explicit Context-Driven Development (ECDD), a methodology for AI-assisted software development that treats prompts, templates, and project context as first-class, version-controlled artifacts rather than ephemeral chat state. ECDD is structured around three pillars (Prompt-Driven AI Governance, Auditable Task & State Management, and a Five-Phase Workflow: Define, Plan, Elaborate, Scope, Implement) and operationalized as a concrete repository workflow (Fig. 1, Fig. 2; Tables 1-3). The central claim is methodological: making intermediate planning and specification artifacts explicit, template-shaped, and reviewable can create more predictable handoffs between developer intent and AI assistance while preserving human-in-the-loop control.
 
 To make ECDD actionable, we described a reference implementation built from five executable prompt contracts, editable Markdown templates, and a small artifact set that encodes project state in version control. In this workflow, governance and constraints are captured in `project_definition.md` (artifacts folder) and propagated to coding agents through `copilot-instructions.md` (the `.github/` folder). Work is decomposed and specified via `workpackage_list.md` and `workpackage_WP-XXX.md` (artifacts folder), and implementation progress and rationale remain auditable through `todos_WP-XXX.md` and an append-only `log.md` (artifacts folder). Because templates and artifacts are intentionally editable, teams can align the workflow with project and company standards and deterministically propagate revisions by re-running the relevant prompts.
 
-Future work has three directions. First, we plan to evaluate ECDD more systematically in realistic settings, including comparative studies against baseline AI usage patterns with careful attention to confounders (project size, contributor count, and risk profile). Second, we aim to explore richer tool support, such as IDE affordances that surface the relevant prompt and artifact for the current task, and integrations with CI, issue trackers, and documentation systems. Third, we want to investigate how artifact-centric, human-in-the-loop workflows interact with assurance techniques (testing automation, static analysis, and red-teaming) and with confidentiality constraints when artifacts contain sensitive context.
+Future work has three directions. First, we plan to evaluate ECDD more systematically in realistic settings, including comparative studies against baseline ad hoc AI-assisted development with careful attention to confounders (project size, contributor count, and risk profile). One approach is to assign comparable feature-implementation tasks to developers (or small teams) under two conditions: (i) free-form prompting with an LLM assistant, and (ii) ECDD with the five-phase prompt workflow and template-shaped artifacts. Outcome measures should include both process and product dimensions. Process measures could include traceability completeness (presence and internal consistency of `project_definition.md`, `workpackage_list.md`, `workpackage_WP-XXX.md`, `todos_WP-XXX.md`, and `log.md`), frequency of context resets (repeated clarification of previously decided constraints), rework cycles (changes to acceptance criteria after implementation), and review effort. Product measures could include test coverage for the implemented feature, defect reports during verification, and reproducibility of continuing work after a tool or session switch. Second, we aim to explore richer tool support, such as IDE affordances that surface the relevant prompt and artifact for the current task, and integrations with CI, issue trackers, and documentation systems. Third, we want to investigate how artifact-centric, human-in-the-loop workflows interact with assurance techniques (testing automation, static analysis, and red-teaming) and with confidentiality constraints when artifacts contain sensitive context.
 
 As LLMs and tools evolve, ECDD should evolve as well. Larger context windows may reduce some friction, but they do not remove the need for shared conventions, explicit contracts, and auditable decision trails. We view ECDD as a reusable workflow package and a research framing for designing AI-assisted development processes where prompts, plans, and logs are treated as part of the software system.
 

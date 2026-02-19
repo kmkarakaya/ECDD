@@ -1,0 +1,711 @@
+[
+  {
+    "index": 1,
+    "status": "mismatch",
+    "method": "title",
+    "score": 0.5185185185185185,
+    "title": "Adding repository custom instructions for GitHub Copilot,",
+    "mismatches": [
+      {
+        "field": "title",
+        "provided": "Adding repository custom instructions for GitHub Copilot,",
+        "crossref": "Getting Started with GitHub Copilot"
+      },
+      {
+        "field": "authors",
+        "provided": [
+          "GitHub Docs"
+        ],
+        "crossref": [
+          "Naga Santhosh Reddy Vootukuri"
+        ]
+      },
+      {
+        "field": "journal",
+        "provided": "2026. Accessed: 2026-02-15. Available: https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot",
+        "crossref": "Vibe Coding with GitHub Copilot"
+      },
+      {
+        "field": "year",
+        "provided": "2026",
+        "crossref": "2025"
+      },
+      {
+        "field": "url",
+        "provided": "https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot",
+        "crossref": "https://doi.org/10.1007/979-8-8688-2196-7_1"
+      }
+    ],
+    "crossref": {
+      "title": "Getting Started with GitHub Copilot",
+      "authors": [
+        "Naga Santhosh Reddy Vootukuri"
+      ],
+      "journal": "Vibe Coding with GitHub Copilot",
+      "volume": null,
+      "issue": null,
+      "pages": "1-16",
+      "year": "2025",
+      "doi": "10.1007/979-8-8688-2196-7_1",
+      "url": "https://doi.org/10.1007/979-8-8688-2196-7_1"
+    },
+    "raw": "[1] GitHub Docs, \"Adding repository custom instructions for GitHub Copilot,\" 2026. Accessed: 2026-02-15. Available: https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot"
+  },
+  {
+    "index": 2,
+    "status": "mismatch",
+    "method": "doi",
+    "score": 1.0,
+    "title": "Measuring GitHub Copilot's Impact on Productivity,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "A. Ziegler",
+          "E. Kalliamvakou",
+          "X. A. Li",
+          "A. Rice",
+          "D. Rifkin",
+          "S. Simister",
+          "G. Sittampalam",
+          "E. Aftandilian"
+        ],
+        "crossref": [
+          "Albert Ziegler",
+          "Eirini Kalliamvakou",
+          "X. Alice Li",
+          "Andrew Rice",
+          "Devon Rifkin",
+          "Shawn Simister",
+          "Ganesh Sittampalam",
+          "Edward Aftandilian"
+        ]
+      }
+    ],
+    "crossref": {
+      "title": "Measuring GitHub Copilot's Impact on Productivity",
+      "authors": [
+        "Albert Ziegler",
+        "Eirini Kalliamvakou",
+        "X. Alice Li",
+        "Andrew Rice",
+        "Devon Rifkin",
+        "Shawn Simister",
+        "Ganesh Sittampalam",
+        "Edward Aftandilian"
+      ],
+      "journal": "Communications of the ACM",
+      "volume": "67",
+      "issue": "3",
+      "pages": "54-63",
+      "year": "2024",
+      "doi": "10.1145/3633453",
+      "url": "https://doi.org/10.1145/3633453"
+    },
+    "raw": "[2] A. Ziegler, E. Kalliamvakou, X. A. Li, A. Rice, D. Rifkin, S. Simister, G. Sittampalam, and E. Aftandilian, \"Measuring GitHub Copilot's Impact on Productivity,\" Communications of the ACM, vol. 67, no. 3, pp. 54-63, 2024. doi: 10.1145/3633453. URL: https://doi.org/10.1145/3633453."
+  },
+  {
+    "index": 3,
+    "status": "mismatch",
+    "method": "title",
+    "score": 1.0,
+    "title": "GitHub Copilot AI pair programmer: Asset or Liability?,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "M. Di Penta and S. Panichella"
+        ],
+        "crossref": [
+          "Arghavan Moradi Dakhel",
+          "Vahid Majdinasab",
+          "Amin Nikanjam",
+          "Foutse Khomh",
+          "Michel C. Desmarais",
+          "Zhen Ming (Jack) Jiang"
+        ]
+      }
+    ],
+    "crossref": {
+      "title": "GitHub Copilot AI pair programmer: Asset or Liability?",
+      "authors": [
+        "Arghavan Moradi Dakhel",
+        "Vahid Majdinasab",
+        "Amin Nikanjam",
+        "Foutse Khomh",
+        "Michel C. Desmarais",
+        "Zhen Ming (Jack) Jiang"
+      ],
+      "journal": "Journal of Systems and Software",
+      "volume": "203",
+      "issue": null,
+      "pages": "111734",
+      "year": "2023",
+      "doi": "10.1016/j.jss.2023.111734",
+      "url": "https://doi.org/10.1016/j.jss.2023.111734"
+    },
+    "raw": "[3] M. Di Penta and S. Panichella, \"GitHub Copilot AI pair programmer: Asset or Liability?,\" Journal of Systems and Software, vol. 203, p. 111734, 2023."
+  },
+  {
+    "index": 4,
+    "status": "mismatch",
+    "method": "doi",
+    "score": 1.0,
+    "title": "Security Weaknesses of Copilot-Generated Code in GitHub Projects: An Empirical Study,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "Y. Fu",
+          "P. Liang",
+          "A. Tahir",
+          "Z. Li",
+          "M. Shahin",
+          "J. Yu",
+          "J. Chen"
+        ],
+        "crossref": [
+          "Yujia Fu",
+          "Peng Liang",
+          "Amjed Tahir",
+          "Zengyang Li",
+          "Mojtaba Shahin",
+          "Jiaxin Yu",
+          "Jinfu Chen"
+        ]
+      }
+    ],
+    "crossref": {
+      "title": "Security Weaknesses of Copilot-Generated Code in GitHub Projects: An Empirical Study",
+      "authors": [
+        "Yujia Fu",
+        "Peng Liang",
+        "Amjed Tahir",
+        "Zengyang Li",
+        "Mojtaba Shahin",
+        "Jiaxin Yu",
+        "Jinfu Chen"
+      ],
+      "journal": "ACM Transactions on Software Engineering and Methodology",
+      "volume": "34",
+      "issue": "8",
+      "pages": "1-34",
+      "year": "2025",
+      "doi": "10.1145/3716848",
+      "url": "https://doi.org/10.1145/3716848"
+    },
+    "raw": "[4] Y. Fu, P. Liang, A. Tahir, Z. Li, M. Shahin, J. Yu, and J. Chen, \"Security Weaknesses of Copilot-Generated Code in GitHub Projects: An Empirical Study,\" ACM Transactions on Software Engineering and Methodology, vol. 34, no. 8, Art. no. 218, pp. 1-34, 2025. doi: 10.1145/3716848. URL: https://doi.org/10.1145/3716848."
+  },
+  {
+    "index": 5,
+    "status": "mismatch",
+    "method": "title",
+    "score": 0.6330935251798561,
+    "title": "The Prompt Report: A Systematic Survey of Prompting Techniques,",
+    "mismatches": [
+      {
+        "field": "title",
+        "provided": "The Prompt Report: A Systematic Survey of Prompting Techniques,",
+        "crossref": "Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing"
+      },
+      {
+        "field": "authors",
+        "provided": [
+          "S. Schulhoff"
+        ],
+        "crossref": [
+          "Pengfei Liu",
+          "Weizhe Yuan",
+          "Jinlan Fu",
+          "Zhengbao Jiang",
+          "Hiroaki Hayashi",
+          "Graham Neubig"
+        ]
+      },
+      {
+        "field": "journal",
+        "provided": "arXiv:2406.06608",
+        "crossref": "ACM Computing Surveys"
+      },
+      {
+        "field": "year",
+        "provided": "2024",
+        "crossref": "2023"
+      }
+    ],
+    "crossref": {
+      "title": "Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing",
+      "authors": [
+        "Pengfei Liu",
+        "Weizhe Yuan",
+        "Jinlan Fu",
+        "Zhengbao Jiang",
+        "Hiroaki Hayashi",
+        "Graham Neubig"
+      ],
+      "journal": "ACM Computing Surveys",
+      "volume": "55",
+      "issue": "9",
+      "pages": "1-35",
+      "year": "2023",
+      "doi": "10.1145/3560815",
+      "url": "https://doi.org/10.1145/3560815"
+    },
+    "raw": "[5] S. Schulhoff et al., \"The Prompt Report: A Systematic Survey of Prompting Techniques,\" arXiv:2406.06608, 2024."
+  },
+  {
+    "index": 6,
+    "status": "mismatch",
+    "method": "title",
+    "score": 1.0,
+    "title": "Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "P. Liu",
+          "W. Yuan",
+          "J. Fu",
+          "Z. Jiang",
+          "H. Hayashi",
+          "G. Neubig"
+        ],
+        "crossref": [
+          "Pengfei Liu",
+          "Weizhe Yuan",
+          "Jinlan Fu",
+          "Zhengbao Jiang",
+          "Hiroaki Hayashi",
+          "Graham Neubig"
+        ]
+      },
+      {
+        "field": "journal",
+        "provided": "arXiv:2107.13586",
+        "crossref": "ACM Computing Surveys"
+      },
+      {
+        "field": "year",
+        "provided": "2021",
+        "crossref": "2023"
+      }
+    ],
+    "crossref": {
+      "title": "Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing",
+      "authors": [
+        "Pengfei Liu",
+        "Weizhe Yuan",
+        "Jinlan Fu",
+        "Zhengbao Jiang",
+        "Hiroaki Hayashi",
+        "Graham Neubig"
+      ],
+      "journal": "ACM Computing Surveys",
+      "volume": "55",
+      "issue": "9",
+      "pages": "1-35",
+      "year": "2023",
+      "doi": "10.1145/3560815",
+      "url": "https://doi.org/10.1145/3560815"
+    },
+    "raw": "[6] P. Liu, W. Yuan, J. Fu, Z. Jiang, H. Hayashi, and G. Neubig, \"Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing,\" arXiv:2107.13586, 2021."
+  },
+  {
+    "index": 7,
+    "status": "mismatch",
+    "method": "title",
+    "score": 0.6351351351351351,
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models,",
+    "mismatches": [
+      {
+        "field": "title",
+        "provided": "ReAct: Synergizing Reasoning and Acting in Language Models,",
+        "crossref": "ReACT_OCRS: An AI-Driven Anonymous Online Reporting System Using Synergized Reasoning and Acting in Language Models"
+      },
+      {
+        "field": "authors",
+        "provided": [
+          "S. Yao",
+          "J. Zhao",
+          "D. Yu",
+          "N. Du",
+          "I. Shafran",
+          "K. Narasimhan",
+          "Y. Cao"
+        ],
+        "crossref": [
+          "Amir Aboubakr Shaker Mahmoud",
+          "Wesam Shishah",
+          "Nilay R. Mistry"
+        ]
+      },
+      {
+        "field": "journal",
+        "provided": "arXiv:2210.03629",
+        "crossref": "IEEE Access"
+      },
+      {
+        "field": "year",
+        "provided": "2022",
+        "crossref": "2025"
+      }
+    ],
+    "crossref": {
+      "title": "ReACT_OCRS: An AI-Driven Anonymous Online Reporting System Using Synergized Reasoning and Acting in Language Models",
+      "authors": [
+        "Amir Aboubakr Shaker Mahmoud",
+        "Wesam Shishah",
+        "Nilay R. Mistry"
+      ],
+      "journal": "IEEE Access",
+      "volume": "13",
+      "issue": null,
+      "pages": "92800-92815",
+      "year": "2025",
+      "doi": "10.1109/access.2025.3571526",
+      "url": "https://doi.org/10.1109/access.2025.3571526"
+    },
+    "raw": "[7] S. Yao, J. Zhao, D. Yu, N. Du, I. Shafran, K. Narasimhan, and Y. Cao, \"ReAct: Synergizing Reasoning and Acting in Language Models,\" arXiv:2210.03629, 2022."
+  },
+  {
+    "index": 8,
+    "status": "mismatch",
+    "method": "title",
+    "score": 1.0,
+    "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "J. Yang",
+          "C. E. Jimenez",
+          "A. Wettig",
+          "K. Lieret",
+          "S. Yao",
+          "K. Narasimhan",
+          "O. Press"
+        ],
+        "crossref": [
+          "Carlos Jimenez",
+          "Kilian Lieret",
+          "Karthik Narasimhan",
+          "Ofir Press",
+          "Alexander Wettig",
+          "John Yang",
+          "Shunyu Yao"
+        ]
+      },
+      {
+        "field": "journal",
+        "provided": "arXiv:2405.15793",
+        "crossref": "Advances in Neural Information Processing Systems 37"
+      }
+    ],
+    "crossref": {
+      "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "authors": [
+        "Carlos Jimenez",
+        "Kilian Lieret",
+        "Karthik Narasimhan",
+        "Ofir Press",
+        "Alexander Wettig",
+        "John Yang",
+        "Shunyu Yao"
+      ],
+      "journal": "Advances in Neural Information Processing Systems 37",
+      "volume": null,
+      "issue": null,
+      "pages": "50528-50652",
+      "year": "2024",
+      "doi": "10.52202/079017-1601",
+      "url": "https://doi.org/10.52202/079017-1601"
+    },
+    "raw": "[8] J. Yang, C. E. Jimenez, A. Wettig, K. Lieret, S. Yao, K. Narasimhan, and O. Press, \"SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering,\" arXiv:2405.15793, 2024."
+  },
+  {
+    "index": 9,
+    "status": "mismatch",
+    "method": "title",
+    "score": 0.6050420168067226,
+    "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?,",
+    "mismatches": [
+      {
+        "field": "title",
+        "provided": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?,",
+        "crossref": "ECom-Bench: Can LLM Agent Resolve Real-World E-commerce Customer Support Issues?"
+      },
+      {
+        "field": "authors",
+        "provided": [
+          "C. E. Jimenez",
+          "J. Yang",
+          "A. Wettig",
+          "S. Yao",
+          "K. Pei",
+          "O. Press",
+          "K. R. Narasimhan"
+        ],
+        "crossref": [
+          "Haoxin Wang",
+          "Xianhan Peng",
+          "Huang Cheng",
+          "Yizhe Huang",
+          "Ming Gong",
+          "Chenghan Yang",
+          "Yang Liu",
+          "Jiang Lin"
+        ]
+      },
+      {
+        "field": "journal",
+        "provided": "arXiv:2310.06770",
+        "crossref": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track"
+      },
+      {
+        "field": "year",
+        "provided": "2023",
+        "crossref": "2025"
+      }
+    ],
+    "crossref": {
+      "title": "ECom-Bench: Can LLM Agent Resolve Real-World E-commerce Customer Support Issues?",
+      "authors": [
+        "Haoxin Wang",
+        "Xianhan Peng",
+        "Huang Cheng",
+        "Yizhe Huang",
+        "Ming Gong",
+        "Chenghan Yang",
+        "Yang Liu",
+        "Jiang Lin"
+      ],
+      "journal": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track",
+      "volume": null,
+      "issue": null,
+      "pages": "276-284",
+      "year": "2025",
+      "doi": "10.18653/v1/2025.emnlp-industry.19",
+      "url": "https://doi.org/10.18653/v1/2025.emnlp-industry.19"
+    },
+    "raw": "[9] C. E. Jimenez, J. Yang, A. Wettig, S. Yao, K. Pei, O. Press, and K. R. Narasimhan, \"SWE-bench: Can Language Models Resolve Real-World GitHub Issues?,\" arXiv:2310.06770, 2023."
+  },
+  {
+    "index": 10,
+    "status": "mismatch",
+    "method": "title",
+    "score": 1.0,
+    "title": "An analysis of the requirements traceability problem,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "O. Gotel and A. Finkelstein"
+        ],
+        "crossref": [
+          "O.C.Z. Gotel",
+          "C.W. Finkelstein"
+        ]
+      },
+      {
+        "field": "journal",
+        "provided": "in Proceedings of the 1st International Conference on Requirements Engineering",
+        "crossref": "Proceedings of IEEE International Conference on Requirements Engineering"
+      },
+      {
+        "field": "year",
+        "provided": "1994",
+        "crossref": "None"
+      }
+    ],
+    "crossref": {
+      "title": "An analysis of the requirements traceability problem",
+      "authors": [
+        "O.C.Z. Gotel",
+        "C.W. Finkelstein"
+      ],
+      "journal": "Proceedings of IEEE International Conference on Requirements Engineering",
+      "volume": null,
+      "issue": null,
+      "pages": "94-101",
+      "year": "None",
+      "doi": "10.1109/icre.1994.292398",
+      "url": "https://doi.org/10.1109/icre.1994.292398"
+    },
+    "raw": "[10] O. Gotel and A. Finkelstein, \"An analysis of the requirements traceability problem,\" in Proceedings of the 1st International Conference on Requirements Engineering, 1994, pp. 94-101."
+  },
+  {
+    "index": 11,
+    "status": "no_match",
+    "raw": "[11] K. Morris, Infrastructure as Code. O'Reilly Media, 2016."
+  },
+  {
+    "index": 12,
+    "status": "mismatch",
+    "method": "doi",
+    "score": 1.0,
+    "title": "How secure is AI-generated code: a large-scale comparison of large language models,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "N. Tihanyi",
+          "T. Bisztray",
+          "M. A. Ferrag",
+          "R. Jain",
+          "L. C. Cordeiro"
+        ],
+        "crossref": [
+          "Norbert Tihanyi",
+          "Tamas Bisztray",
+          "Mohamed Amine Ferrag",
+          "Ridhi Jain",
+          "Lucas C. Cordeiro"
+        ]
+      }
+    ],
+    "crossref": {
+      "title": "How secure is AI-generated code: a large-scale comparison of large language models",
+      "authors": [
+        "Norbert Tihanyi",
+        "Tamas Bisztray",
+        "Mohamed Amine Ferrag",
+        "Ridhi Jain",
+        "Lucas C. Cordeiro"
+      ],
+      "journal": "Empirical Software Engineering",
+      "volume": "30",
+      "issue": "2",
+      "pages": null,
+      "year": "2025",
+      "doi": "10.1007/s10664-024-10590-1",
+      "url": "https://doi.org/10.1007/s10664-024-10590-1"
+    },
+    "raw": "[12] N. Tihanyi, T. Bisztray, M. A. Ferrag, R. Jain, and L. C. Cordeiro, \"How secure is AI-generated code: a large-scale comparison of large language models,\" Empirical Software Engineering, vol. 30, no. 2, Art. no. 47, 2025. doi: 10.1007/s10664-024-10590-1."
+  },
+  {
+    "index": 13,
+    "status": "mismatch",
+    "method": "doi",
+    "score": 1.0,
+    "title": "Fine-tuning and prompt engineering for large language models-based code review automation,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "C. Pornprasit and C. Tantithamthavorn"
+        ],
+        "crossref": [
+          "Chanathip Pornprasit",
+          "Chakkrit Tantithamthavorn"
+        ]
+      },
+      {
+        "field": "issue",
+        "provided": "107523",
+        "crossref": null
+      }
+    ],
+    "crossref": {
+      "title": "Fine-tuning and prompt engineering for large language models-based code review automation",
+      "authors": [
+        "Chanathip Pornprasit",
+        "Chakkrit Tantithamthavorn"
+      ],
+      "journal": "Information and Software Technology",
+      "volume": "175",
+      "issue": null,
+      "pages": "107523",
+      "year": "2024",
+      "doi": "10.1016/j.infsof.2024.107523",
+      "url": "https://doi.org/10.1016/j.infsof.2024.107523"
+    },
+    "raw": "[13] C. Pornprasit and C. Tantithamthavorn, \"Fine-tuning and prompt engineering for large language models-based code review automation,\" Information and Software Technology, vol. 175, Art. no. 107523, 2024. doi: 10.1016/j.infsof.2024.107523."
+  },
+  {
+    "index": 14,
+    "status": "mismatch",
+    "method": "doi",
+    "score": 1.0,
+    "title": "BadCodePrompt: backdoor attacks against prompt engineering of large language models for code generation,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "Y. Qu",
+          "S. Huang",
+          "Y. Li",
+          "T. Bai",
+          "X. Chen",
+          "X. Wang",
+          "L. Li",
+          "Y. Yao"
+        ],
+        "crossref": [
+          "Yubin Qu",
+          "Song Huang",
+          "Yanzhou Li",
+          "Tongtong Bai",
+          "Xiang Chen",
+          "Xingya Wang",
+          "Long Li",
+          "Yongming Yao"
+        ]
+      }
+    ],
+    "crossref": {
+      "title": "BadCodePrompt: backdoor attacks against prompt engineering of large language models for code generation",
+      "authors": [
+        "Yubin Qu",
+        "Song Huang",
+        "Yanzhou Li",
+        "Tongtong Bai",
+        "Xiang Chen",
+        "Xingya Wang",
+        "Long Li",
+        "Yongming Yao"
+      ],
+      "journal": "Automated Software Engineering",
+      "volume": "32",
+      "issue": "1",
+      "pages": null,
+      "year": "2025",
+      "doi": "10.1007/s10515-024-00485-2",
+      "url": "https://doi.org/10.1007/s10515-024-00485-2"
+    },
+    "raw": "[14] Y. Qu, S. Huang, Y. Li, T. Bai, X. Chen, X. Wang, L. Li, and Y. Yao, \"BadCodePrompt: backdoor attacks against prompt engineering of large language models for code generation,\" Automated Software Engineering, vol. 32, no. 1, Art. no. 17, 2025. doi: 10.1007/s10515-024-00485-2."
+  },
+  {
+    "index": 15,
+    "status": "mismatch",
+    "method": "doi",
+    "score": 1.0,
+    "title": "Are prompts all you need? Evaluating prompt-based Large Language Models (LLMs) for software requirements classification,",
+    "mismatches": [
+      {
+        "field": "authors",
+        "provided": [
+          "M. Binkhonain and R. Alfayez"
+        ],
+        "crossref": [
+          "Manal Binkhonain",
+          "Reem Alfayez"
+        ]
+      }
+    ],
+    "crossref": {
+      "title": "Are prompts all you need? Evaluating prompt-based Large Language Models (LLM)s for software requirements classification",
+      "authors": [
+        "Manal Binkhonain",
+        "Reem Alfayez"
+      ],
+      "journal": "Requirements Engineering",
+      "volume": "30",
+      "issue": "4",
+      "pages": "423-443",
+      "year": "2025",
+      "doi": "10.1007/s00766-025-00451-8",
+      "url": "https://doi.org/10.1007/s00766-025-00451-8"
+    },
+    "raw": "[15] M. Binkhonain and R. Alfayez, \"Are prompts all you need? Evaluating prompt-based Large Language Models (LLMs) for software requirements classification,\" Requirements Engineering, vol. 30, no. 4, pp. 423-443, 2025. doi: 10.1007/s00766-025-00451-8."
+  }
+]
